@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
-appBar: {
+  appBar: {
     borderRadius: 15,
     margin: '30px 0',
     display: 'flex',
@@ -10,34 +10,53 @@ appBar: {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '10px 50px',
-},
-heading: {
-    color: 'rgba(0,183,255, 1)',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+  },
+  heading: {
+    color: theme.palette.primary.main,
     textDecoration: 'none',
-},
-image: {
-    marginLeft: '15px',
-},
-toolbar: {
+    fontSize: '2em',
+    fontWeight: 300,
+  },
+  image: {
+    marginLeft: '10px',
+    marginTop: '5px',
+  },
+  toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
     width: '400px',
-},
-profile: {
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+    },
+  },
+  profile: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '400px',
-},
-userName: {
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      marginTop: 20,
+      justifyContent: 'center',
+    },
+  },
+  logout: {
+    marginLeft: '20px',
+  },
+  userName: {
     display: 'flex',
     alignItems: 'center',
-},
-brandContainer: {
+    textAlign: 'center',
+  },
+  brandContainer: {
     display: 'flex',
     alignItems: 'center',
-},
-purple: {
+  },
+  purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
-},
+  },
 }));
